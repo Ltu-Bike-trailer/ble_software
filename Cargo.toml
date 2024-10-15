@@ -1,5 +1,5 @@
 [package]
-name = "ble_controller"
+name = "ble_software"
 version = "0.1.0"
 authors = ["sleeplessmisty <danieltungren@hotmail.com>"]
 edition = "2021"
