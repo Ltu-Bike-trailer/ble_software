@@ -62,9 +62,15 @@ fn main() {
 
   let speed = [0u8, 1u8, 2u8, 3u8, 4u8, 5u8]; // Array of unsigned 8-bit integers (later on we will have message IDs and values attached to them over CAN module)
   let range = [100u8, 150u8]; // Array of unsigned 8-bit integers for testing range ^
-  let battery = [50u8, 95u8, 80u8, 30u8]; // Array of unsigned 8-bit integers for testing range 
+  let battery = [50u8, 95u8, 80u8, 30u8]; // Array of unsigned 8-bit integers for testing range
+
+  // viktors saker här
+
   // BLE will update every 1 sec for other devices to see
   loop {
+
+    // Viktors saker här
+
     esp_idf_svc::hal::delay::FreeRtos::delay_ms(1000); // Send message every 1000ms
 
     // Randomly select a value from the array `vs`

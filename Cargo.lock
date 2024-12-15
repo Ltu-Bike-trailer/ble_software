@@ -42,6 +42,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "86fdf8605db99b54d3cd748a44c6d04df638eb5dafb219b135d0149bd0db01f6"
 
 [[package]]
+name = "arraydeque"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7d902e3d592a523def97af8f317b08ce16b7ab854c1985a0c671e6f15cebc236"
+
+[[package]]
 name = "as-slice"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -113,7 +119,9 @@ dependencies = [
  "anyhow",
  "bitflags 2.6.0",
  "bstr",
+ "can_mcp2515",
  "embassy-sync",
+ "embedded-can",
  "embedded-hal 1.0.0",
  "embedded-svc 0.25.3",
  "embuild",
@@ -121,6 +129,7 @@ dependencies = [
  "esp-idf-svc",
  "esp32-nimble",
  "heapless 0.8.0",
+ "lib",
  "log",
  "num_enum",
  "once_cell",
@@ -170,6 +179,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b96ec4966b5813e2c0507c1f86115c8c5abaadc3980879c3424042a02fd1ad3"
 dependencies = [
  "serde",
+]
+
+[[package]]
+name = "can_mcp2515"
+version = "0.1.0"
+source = "git+https://github.com/wiiggee1/can_mcp2515?branch=master#0339997226593efffaa7c0270f0d9cb94b7796a1"
+dependencies = [
+ "embedded-can",
+ "embedded-hal 1.0.0",
+ "nb 1.1.0",
 ]
 
 [[package]]
@@ -918,6 +937,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55"
 
 [[package]]
+name = "lib"
+version = "0.2.0"
+source = "git+https://github.com/Ltu-Bike-trailer/control-software?branch=hlc_app#87136467ff798226360a22aa31bcbd96ae5b12d3"
+dependencies = [
+ "arraydeque",
+ "can_mcp2515",
+ "embedded-can",
+ "heapless 0.8.0",
+ "statics",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.158"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1356,6 +1387,16 @@ name = "stable_deref_trait"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
+
+[[package]]
+name = "statics"
+version = "0.1.0"
+source = "git+https://github.com/Ltu-Bike-trailer/control-software?branch=hlc_app#87136467ff798226360a22aa31bcbd96ae5b12d3"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.77",
+]
 
 [[package]]
 name = "strum"

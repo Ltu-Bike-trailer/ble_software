@@ -37,6 +37,10 @@ rand = "0.8.5" # For testing purpose
 esp-idf-hal = "0.44.1"
 embedded-svc = { version = "0.25", optional = true, default-features = false }
 embedded-hal = "1.0.0-alpha.10"
+embedded-can = "0.4.1"
+#CAN and lib module dependency
+can_mcp2515 = { git = "https://github.com/wiiggee1/can_mcp2515", branch = "master"}
+lib = { git = "https://github.com/Ltu-Bike-trailer/control-software", branch = "hlc_app" }
 
 [dev-dependencies]
 anyhow = "1"
